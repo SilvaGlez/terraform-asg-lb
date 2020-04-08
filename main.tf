@@ -42,10 +42,11 @@ data "aws_ami" "amazon_linux" {
 ######
 # Launch configuration and autoscaling group
 ######
-module "example_asg" {
-  source = "../../"
+module "autoscaling_ec2" {
+  source  = "terraform-aws-modules/autoscaling/aws"
+  version = "3.4.0"
 
-  name = "example-with-elb"
+  name = "asg-with-elb"
 
   # Launch configuration
   #
